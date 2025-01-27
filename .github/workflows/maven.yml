@@ -29,8 +29,9 @@ jobs:
         cache: maven
     - name: Build & push docker img 
       env:
-        DOCKERHUB_USER:${{secrets.DOCKERHUB_USER}}
-        DOCKERHUB_PWD:${{secrets.DOCKERHUB_PWD}}
+         DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
+         DOCKERHUB_PWD: ${{ secrets.DOCKERHUB_PWD }}
+
       run: mvn -B spring-boot:build-image -DskipTests
 
    
